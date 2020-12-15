@@ -1,6 +1,9 @@
 const apikey = `ec63f7d283893939d0a08fbab85f372f`;
 
-let url =`http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=${apikey}&units=metric&lang=fr`;
+
+//appel API météo
+let apicall = function(city){
+    let url =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric&lang=fr`;
 
 fetch(url).then((response) =>
     response.json().then((data) => {
@@ -20,10 +23,12 @@ fetch(url).then((response) =>
     })
 );
 
+}
 
 document.querySelector('form').addEventListener('submit', function(e){
     e.preventDefault();
     let ville = document.querySelector('#inputcity').value;
+    apicall(ville);
 });
 
 
