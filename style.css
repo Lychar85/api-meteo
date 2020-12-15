@@ -5,7 +5,7 @@ body{
     font-size: 15px;
 }
 
-#nav{
+nav{
     position: fixed;
     background-color:  rgb(23, 40, 116);
 }
@@ -17,7 +17,7 @@ body{
 }
 
 
-#temp{
+#temp, #temp2{
     font-size: 400%;
     font-weight: bold;
 }
@@ -25,12 +25,13 @@ body{
 
 
 #boxall{
-    margin-top: 150px;
+    margin-top: 50px;
     background-color: white;
     color: black;
     border-radius: 10px;
     padding: 0px;
 }
+
 
 
 #boxall p{
@@ -39,4 +40,15 @@ body{
     margin-top: 30px;
     border-top: 1px solid rgba(0, 0, 0, 0.404);
     padding: 0px 10px 0px 10px;
+}
+
+
+#headerbox{
+    margin-top: 25px;
+    background: rgb(9, 19, 63);
+    border-radius: 30px;
+}
+
+.maxtemp{
+    text-align: right;
 }
