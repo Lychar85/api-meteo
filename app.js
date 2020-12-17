@@ -9,6 +9,7 @@ fetch(url).then((response) =>
     response.json().then((data) => {
         console.log(data);
         document.querySelector('#city').innerHTML = data.name;
+        //document.querySelector('#city2').innerHTML = date.name;
         document.querySelector('#ciel').innerHTML = data.weather[0].description;
         document.querySelector('#temp').innerHTML = Math.round(data.main.temp) + '°';
         document.querySelector('#temp2').innerHTML = Math.round(data.main.temp) + '°';
