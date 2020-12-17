@@ -19,7 +19,7 @@ fetch(url).then((response) =>
         document.querySelector('.ventnum').innerHTML = data.wind.speed + ' km/h';
         document.querySelector('.humiditenum').innerHTML = data.main.humidity + ' %';
         document.querySelector('.pressionnum').innerHTML = data.main.pressure + ' Mb';
-        document.querySelector('.visibilitenum').innerHTML = data.visibility.toLocaleString() + ' m';
+        document.querySelector('.visibilitenum').innerHTML = data.visibility / 1000 + ' Km/h';
 
         
     })

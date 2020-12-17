@@ -11,6 +11,13 @@ body{
     border-bottom: 1px solid rgb(255, 255, 255);
 }
 
+#city{
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*Recherche
+=======================================================*/
 nav{
     position: fixed;
     background-color:  rgb(23, 40, 116);
@@ -22,7 +29,21 @@ nav{
     height: 25px;
 }
 
+.form-groupe{
+    display: flex;
+}
 
+.form-groupe button{
+    border: none;
+    border-top: 1px solid rgb(255, 255, 255);
+    /*border-right: 1px solid rgba(255, 255, 255, 0.616);*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.616);
+    border-radius: 100px;
+    background: none;
+}
+
+/*Div info
+=========================================================*/
 #temp, #temp2{
     font-size: 400%;
     font-weight: bold;
@@ -50,7 +71,6 @@ nav{
 
 
 #headerbox{
-    margin-top: 25px;
     background: rgb(9, 19, 63);
     border-radius: 30px;
 }
