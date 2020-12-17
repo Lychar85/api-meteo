@@ -10,21 +10,33 @@ fetch(url).then((response) =>
         console.log(data);
         document.querySelector('#city').innerHTML = data.name;
         document.querySelector('#ciel').innerHTML = data.weather[0].description;
-        document.querySelector('#temp').innerHTML = data.main.temp + '°';
-        document.querySelector('#temp2').innerHTML = data.main.temp + '°';
-        document.querySelector('#mintempnum').innerHTML = data.main.temp_min + '°' + '/' ;
-        document.querySelector('#maxtempnum').innerHTML = data.main.temp_max + '°';
-        document.querySelector('#maxtempnum2').innerHTML = data.main.temp_max + '°';
-        document.querySelector('.ventnum').innerHTML = data.wind.speed;
-        document.querySelector('.humiditenum').innerHTML = data.main.humidity + '%';
-        document.querySelector('.pressionnum').innerHTML = data.main.pressure + 'Mb';
-        document.querySelector('.visibilitenum').innerHTML = data.visibility;
-        //ajout icon
+        document.querySelector('#temp').innerHTML = Math.round(data.main.temp) + '°';
+        document.querySelector('#temp2').innerHTML = Math.round(data.main.temp) + '°';
+        document.querySelector('#mintempnum').innerHTML = Math.round(data.main.temp_min) + '°' + '/' ;
+        document.querySelector('#maxtempnum').innerHTML = Math.round(data.main.temp_max) + '°';
+        document.querySelector('#maxtempnum2').innerHTML = Math.round(data.main.temp_max) + '°';
+        document.querySelector('.ventnum').innerHTML = data.wind.speed + ' km/h';
+        document.querySelector('.humiditenum').innerHTML = data.main.humidity + ' %';
+        document.querySelector('.pressionnum').innerHTML = data.main.pressure + ' Mb';
+        document.querySelector('.visibilitenum').innerHTML = data.visibility.toLocaleString() + ' m';
+
         
     })
 );
 
 }
+
+const button = document.getElementById('btn');
+
+button.addEventListener('click', function(e){
+    e.preventDefault();
+    let ville = document.querySelector('#inputcity').value;
+    apicall(ville); 
+})
+
+
+
+
 
 document.querySelector('form').addEventListener('submit', function(e){
     e.preventDefault();
