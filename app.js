@@ -31,4 +31,4 @@ document.querySelector('form').addEventListener('submit', function(e){
     apicall(ville);
 });
 
-
+apicall('nantes')
