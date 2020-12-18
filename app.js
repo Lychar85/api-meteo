@@ -26,16 +26,17 @@ fetch(url).then((response) =>
 );
 
 }
-
+        
 const button = document.getElementById('btn');
 
-button.addEventListener('click', function(e){
+button.addEventListener('click', inputcity)
+
+function inputcity(e){
     e.preventDefault();
     let ville = document.querySelector('#inputcity').value;
     apicall(ville); 
-})
 
-
+}
 
 
 
@@ -65,7 +66,7 @@ var affichageHeure = function(){
 
     //Récupére le mois : 
     listeMois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-    mois = listeMois[today.getMonth()]; //getMonth() donne l'index 1 comme on est en Février, ce qui donne la valeur "Février" depuis notre liste
+    mois = listeMois[today.getMonth()]; 
 
     // Récupére le numéro du jour du mois : 
     jourNUmero = today.getDate();
@@ -84,22 +85,18 @@ var affichageHeure = function(){
         }
     }
 
-    // Récupére les heures : 
+    
     heures = deuxChiffres(today.getHours());
-
-    // Récupére les minutes : 
     minutes = deuxChiffres(today.getMinutes());
-
-    // Récupére les secondes : 
     secondes = deuxChiffres(today.getSeconds());
 
-    //Affichage  HTML : 
+    //Affichage
     heuress.textContent = heures + ":" + minutes + ":" + secondes;
     date.textContent = jourNom + ", " + jourNUmero + " " + mois + " " + annee;
 
-    // Lancer la fonction affichage heure toutes les 1000 ms, soit toute les secondes : 
+    // Lancer la fonction affichage  
     setTimeout(affichageHeure, 1000);
 }
 
-//Lancer la fonction une fois au début : 
+//Lance la fonction
 affichageHeure();

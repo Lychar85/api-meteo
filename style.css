@@ -27,6 +27,7 @@ nav{
     background: rgb(31, 46, 112);
     border-radius: 100px;
     height: 25px;
+    border-right: none;
 }
 
 .form-groupe{
@@ -39,7 +40,7 @@ nav{
     /*border-right: 1px solid rgba(255, 255, 255, 0.616);*/
     border-bottom: 1px solid rgba(255, 255, 255, 0.616);
     border-radius: 100px;
-    background: none;
+    background: rgb(31, 46, 112);
 }
 
 /*Div info
