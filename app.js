@@ -12,24 +12,19 @@ fetch(url).then((response) =>
         //document.querySelector('#city2').innerHTML = date.name;
         document.querySelector('#ciel').innerHTML = data.weather[0].description;
         document.querySelector('#temp').innerHTML = Math.round(data.main.temp) + '°';
-        document.querySelector('#temp2').innerHTML = Math.round(data.main.temp) + '°';
-        document.querySelector('#mintempnum').innerHTML = Math.round(data.main.temp_min) + '°' + '/' ;
+        document.querySelector('#mintempnum').innerHTML = 'température min/max : '+ Math.round(data.main.temp_min) + '°' + '/' ;
         document.querySelector('#maxtempnum').innerHTML = Math.round(data.main.temp_max) + '°';
-        document.querySelector('#maxtempnum2').innerHTML = Math.round(data.main.temp_max) + '°';
-        document.querySelector('.ventnum').innerHTML = data.wind.speed + ' km/h';
-        document.querySelector('.humiditenum').innerHTML = data.main.humidity + ' %';
-        document.querySelector('.pressionnum').innerHTML = data.main.pressure + ' Mb';
-        document.querySelector('.visibilitenum').innerHTML = data.visibility / 1000 + ' Km/h';
+        document.querySelector('#ventnum').innerHTML = 'vitesse du vent : ' + data.wind.speed + ' km/h';
+        document.querySelector('#humiditenum').innerHTML = 'humidité : ' + data.main.humidity + ' %';
+        document.querySelector('#pressionnum').innerHTML = 'pression atmosphérique : ' + data.main.pressure + ' Mb';
+        document.querySelector('#visibilitenum').innerHTML = 'visibilité : ' + data.visibility / 1000 + ' Km/h';
 
         
     })
 );
 
 }
-        
-const button = document.getElementById('btn');
 
-button.addEventListener('click', inputcity)
 
 function inputcity(e){
     e.preventDefault();
@@ -46,7 +41,7 @@ document.querySelector('form').addEventListener('submit', function(e){
     apicall(ville);
 });
 
-apicall('nantes');
+apicall('marseille');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
